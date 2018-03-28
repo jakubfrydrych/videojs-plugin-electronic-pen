@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Electronic pen - plugin Video.js</title>
+    <link href="http://vjs.zencdn.net/6.6.3/video-js.css" rel="stylesheet">
+
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <style>
+
+        h1 {
+            text-align: center;
+            font-family: Helvetica, Arial, Sans-Serif;
+        }
+
+        #my-video {
+            margin: 20px auto;
+            border: 1px solid #857671;
+            box-shadow: 0px 6px 0px #4E413B, 0px 9px 14px silver;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Electronic pen - plugin Video.js</h1>
+    <video id="my-video" class="video-js" controls preload="auto" width="700" height="400"
+  poster="./postersrc/electronic-pen-poster.png" data-setup="{}">
+    <source src="./videosrc/videoplayback.mp4" type='video/mp4'>
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
+
+  <script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
+  <script src="../dist/electronic-pen.bundle.js"></script>
+  <script>
+     // check videojs ready and initialize electronic pen plugin
+     videojs('my-video').ready(function() {
+        var player = this;
+        this.electronicPen();
+     });
+  </script>
+</body>
+</html>
